@@ -1,0 +1,20 @@
+<div class="ui container">
+  <div class="ui grid">
+    <div class="column">
+      <h1>Import Manifest</h1>
+      <form action="/import/manifest/update" method="post" class="ui form">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+        <div class="field">
+          <label>JSON for maifest</label>
+          <textarea name="manifest_json" rows="20" class="mf_json"></textarea>
+        </div>
+        <button type="submit" class="ui button primary">Submit</button>
+        <button class="ui button secondary right floated mf_clear"
+          type="button">Clear</button>
+        <button class="ui button secondary right floated mf_beautify_json"
+          type="button">Beautify JSON</button>
+
+      </form>
+    </div>
+  </div>
+</div>

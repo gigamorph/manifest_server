@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>A:</strong>
+  <%= @manifest.a_id %>
+</p>
+
+<p>
+  <strong>A type:</strong>
+  <%= @manifest.a_type %>
+</p>
+
+<p>
+  <strong>A context:</strong>
+  <%= @manifest.a_context %>
+</p>
+
+<p>
+  <strong>Label:</strong>
+  <%= @manifest.label %>
+</p>
+
+<%= link_to 'Edit', edit_manifest_path(@manifest) %> |
+<%= link_to 'Back', manifests_path %>
