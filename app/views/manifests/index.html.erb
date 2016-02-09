@@ -1,29 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Manifests</h1>
+<div class="ui container">
 
-<table>
-  <thead>
-    <tr>
-      <th>label</th>
-      <th>a_id</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <h1>Manifests</h1>
 
-  <tbody>
-    <% @manifests.each do |manifest| %>
+  <table class="ui celled table">
+    <thead>
       <tr>
-        <td><%= manifest.label %></td>
-        <td><%= manifest.a_id %></td>
-        <td><%= link_to 'Show', manifest %></td>
-        <td><%= link_to 'Edit', edit_manifest_path(manifest) %></td>
-        <td><%= link_to 'Destroy', manifest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>label</th>
+        <th>@id</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @manifests.each do |manifest| %>
+        <tr>
+          <td><%= manifest.label %></td>
+          <td><%= manifest['@id'] %></td>
+          <td><%= link_to 'Show', manifest %></td>
+          <td><%= link_to 'Edit', edit_manifest_path(manifest) %></td>
+          <td><%= link_to 'Destroy', manifest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Manifest', new_manifest_path %>
+  <br>
+  <button class="ui button"><%= link_to 'New Manifest', new_manifest_path %></button>
+
+</div>

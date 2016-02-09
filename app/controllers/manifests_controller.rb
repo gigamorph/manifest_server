@@ -61,8 +61,8 @@ class ManifestsController < ApplicationController
     end
   end
 
-  def import
-    render :import
+  def serve
+    render json: Manifest.where(ident: params[:identifier]).to_json
   end
 
   private

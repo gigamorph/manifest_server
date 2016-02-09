@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   root 'manifests#index'
 
-  resources :canvas
+  get 'iiif/:identifier/manifest' => 'manifests#serve'
+
   resources :manifests
-  resources :manifests
-  resources :canvas
-  resources :manifests
-  resources :manifests
+  resources :sequences
+  resources :canvases
+  resources :images
+  resources :resources
 
   get 'import/manifest' => 'import#manifest'
   post 'import/manifest/update' => 'import#manifest_update'
